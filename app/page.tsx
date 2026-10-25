@@ -98,7 +98,7 @@ export default function Home() {
 
       {/* 4. ALT BİLGİ (FOOTER) */}
       <footer id="iletisim" className="border-t border-slate-800 py-8 bg-slate-950 text-center text-slate-500 text-sm">
-        <p className="mb-2">© {new Date().getFullYear()} DEÜ Yönetim Bilişim Sistemleri Topluluğu</p>
+        <p className="mb-2">© 2026 DEÜ Yönetim Bilişim Sistemleri Topluluğu</p>
         <p className="text-xs">Buca / İzmir</p>
       </footer>
     </div>
