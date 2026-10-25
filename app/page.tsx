@@ -1,69 +1,106 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
+      {/* 1. ÜST MENÜ (NAVBAR) */}
+      <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+              DEÜ YBS
+            </span>
+            <span className="text-xs px-2 py-0.5 rounded-full bg-blue-950 text-blue-300 border border-blue-800">
+              Topluluğu
+            </span>
+          </div>
+          <nav className="hidden md:flex space-x-8 text-sm text-slate-300 font-medium">
+            <a href="#hakkimizda" className="hover:text-blue-400 transition">Hakkımızda</a>
+            <a href="#etkinlikler" className="hover:text-blue-400 transition">Etkinlikler</a>
+            <a href="#iletisim" className="hover:text-blue-400 transition">İletişim</a>
+          </nav>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://forms.google.com" 
             target="_blank"
             rel="noopener noreferrer"
+            className="bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-lg transition"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Aramıza Katıl
           </a>
         </div>
-      </main>
+      </header>
+
+      {/* 2. KARŞILAMA (HERO) ALANI */}
+      <section className="max-w-6xl mx-auto px-6 pt-24 pb-20 text-center flex-1 flex flex-col items-center justify-center">
+        <div className="inline-block mb-4 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-800/50">
+          Geleceğin Teknolojisi & Yönetimi
+        </div>
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight max-w-3xl mb-6">
+          İş Dünyası ile Teknolojiyi{" "}
+          <span className="bg-gradient-to-r from-blue-400 via-indigo-300 to-teal-300 bg-clip-text text-transparent">
+            Bir Araya Getiriyoruz
+          </span>
+        </h1>
+        <p className="text-slate-400 text-base md:text-lg max-w-2xl mb-8 leading-relaxed">
+          Dokuz Eylül Üniversitesi Yönetim Bilişim Sistemleri Topluluğu olarak; teknik atölyeler, kariyer zirveleri ve yenilikçi projelerle kendimizi geleceğe hazırlıyoruz.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <a
+            href="#etkinlikler"
+            className="bg-blue-600 hover:bg-blue-500 text-white font-medium px-6 py-3 rounded-xl transition"
+          >
+            Etkinlikleri İncele
+          </a>
+          <a
+            href="#hakkimizda"
+            className="border border-slate-700 hover:border-slate-500 text-slate-300 font-medium px-6 py-3 rounded-xl transition"
+          >
+            Bizi Tanıyın
+          </a>
+        </div>
+      </section>
+
+      {/* 3. NELER YAPIYORUZ? (KARTLAR) */}
+      <section id="hakkimizda" className="border-t border-slate-900 bg-slate-900/30 py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Neler Yapıyoruz?</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div className="w-10 h-10 rounded-lg bg-blue-950 text-blue-400 flex items-center justify-center font-bold mb-4">
+                💻
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Teknik Atölyeler</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Yazılım geliştirme, veri bilimi ve yapay zeka konularında uygulamalı hands-on eğitimler düzenliyoruz.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div className="w-10 h-10 rounded-lg bg-indigo-950 text-indigo-400 flex items-center justify-center font-bold mb-4">
+                🎤
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Kariyer Zirveleri</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Sektörün öncü firmalarını ve DEÜ mezunlarını öğrencilerle buluşturarak mentorluk ve staj kapılarını aralıyoruz.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+              <div className="w-10 h-10 rounded-lg bg-teal-950 text-teal-400 flex items-center justify-center font-bold mb-4">
+                🚀
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Proje & Takım Çalışması</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Hackathonlara katılıyor, topluluk içi ekipler kurarak gerçek hayat problemlerine yazılımsal çözümler üretiyoruz.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. ALT BİLGİ (FOOTER) */}
+      <footer id="iletisim" className="border-t border-slate-800 py-8 bg-slate-950 text-center text-slate-500 text-sm">
+        <p className="mb-2">© {new Date().getFullYear()} DEÜ Yönetim Bilişim Sistemleri Topluluğu</p>
+        <p className="text-xs">Buca / İzmir</p>
+      </footer>
     </div>
   );
 }
